@@ -179,6 +179,8 @@ call plug#end()
     au! BufWinEnter *.md,*.markdown,*.mdown let g:markdown_preview_on = g:markdown_preview_auto || g:markdown_preview_on  
     au! BufWinLeave *.md,*.markdown,*.mdown let g:markdown_preview_on = !g:markdown_preview_auto && g:markdown_preview_on  
     nmap tm @=(g:markdown_preview_on ? ':Stop' : ':Start')<CR>MarkdownPreview<CR>:let g:markdown_preview_on = 1 - g:markdown_preview_on<CR>
+  " \G => scroll to bottom in markdown preview (insert mode)
+    imap <leader>G <esc><leader>Ga
   " \jd => GoTo the definition
     "nnoremap <leader>jd :YcmCompleter GoTo<CR>
   " \e => edit only current/selected line(s) in normal/visual mode
@@ -286,6 +288,7 @@ call plug#end()
   " Notes
     let g:notes_directories = ['~/Dev/notes-in-vim']
   " Startify
+    command! -nargs=1 CD cd <args> | Startify
     autocmd User Startified setlocal cursorline
     let g:startify_enable_special         = 0
     let g:startify_files_number           = 8
