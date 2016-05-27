@@ -179,8 +179,8 @@ call plug#end()
     au! BufWinEnter *.md,*.markdown,*.mdown let g:markdown_preview_on = g:markdown_preview_auto || g:markdown_preview_on  
     au! BufWinLeave *.md,*.markdown,*.mdown let g:markdown_preview_on = !g:markdown_preview_auto && g:markdown_preview_on  
     nmap tm @=(g:markdown_preview_on ? ':Stop' : ':Start')<CR>MarkdownPreview<CR>:let g:markdown_preview_on = 1 - g:markdown_preview_on<CR>
-  " ^G => scroll to bottom in markdown preview (insert mode)
-    imap <c-g> <esc><leader>Ga
+  " \g => scroll to bottom in markdown preview (insert mode)
+    imap <leader>g <esc><leader>Ga
   " \jd => GoTo the definition
     "nnoremap <leader>jd :YcmCompleter GoTo<CR>
   " \e => edit only current/selected line(s) in normal/visual mode
