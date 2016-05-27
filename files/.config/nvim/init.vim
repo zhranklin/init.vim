@@ -107,7 +107,7 @@ call plug#end()
   " go => go to anywhere
     nmap go <Plug>(easymotion-jumptoanywhere)
   " <c-v> => for pasting
-    imap <c-v> <esc>"+pi
+    imap <c-v> <esc>"+pa
   " <c-h/j/k/l> => hjkl in normal mode (but there is a bug mapping <c-h>)
     imap <c-h> <left>
     imap <c-j> <down>
@@ -179,8 +179,8 @@ call plug#end()
     au! BufWinEnter *.md,*.markdown,*.mdown let g:markdown_preview_on = g:markdown_preview_auto || g:markdown_preview_on  
     au! BufWinLeave *.md,*.markdown,*.mdown let g:markdown_preview_on = !g:markdown_preview_auto && g:markdown_preview_on  
     nmap tm @=(g:markdown_preview_on ? ':Stop' : ':Start')<CR>MarkdownPreview<CR>:let g:markdown_preview_on = 1 - g:markdown_preview_on<CR>
-  " \G => scroll to bottom in markdown preview (insert mode)
-    imap <leader>G <esc><leader>Ga
+  " ^G => scroll to bottom in markdown preview (insert mode)
+    imap <c-g> <esc><leader>Ga
   " \jd => GoTo the definition
     "nnoremap <leader>jd :YcmCompleter GoTo<CR>
   " \e => edit only current/selected line(s) in normal/visual mode
