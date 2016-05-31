@@ -202,7 +202,6 @@ call plug#end()
     map zn <Leader><Leader>n
     map zN <Leader><Leader>N
     map zs <Leader><Leader>s
-
   " zn => NrrwRgn in normal/visual mode
     nmap zn :NR<CR>
     xmap zn :NR<CR>
@@ -249,7 +248,7 @@ call plug#end()
     hi EasyMotionTarget ctermfg=9 guifg=red
     hi EasyMotionTarget2First ctermfg=9 guifg=red
     hi EasyMotionTarget2Second ctermfg=9 guifg=lightred
-    hi link EasyMotionShade NonText
+    hi link EasyMotionShade Comment
   " Emmet
     let g:user_emmet_leader_key = ',z'
   " ESearch
