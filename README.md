@@ -47,7 +47,11 @@ Then use the command `nyaovim` for opening it.
 Or use `electron-packager` to package the NyaoVim and install it to your system's desktop(for using it as an app).
 
 ### Something about icons
-For correctly show the icons, nerd-font should be installed. It's alreadily patched in the most popular programming fonts, so just pick one [here](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts), 
+For correctly show the icons, nerd-font should be installed. It's alreadily patched in the most popular programming fonts, so just pick one [here](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts).
+
+For nyaovim, you should choose the version without "mono", and for neovim in terminal it should contain "mono".
+
+Then you should set the font(non-mono) in NyaoVim(`~/.config/nyaovim/nyaovimrc.html`), or choose the right font in your terminal(mono).
 
 ### Some other configuration
 - All configuration file is in `~/.config/nvim/`(same as `~/.vim` for vim), and
