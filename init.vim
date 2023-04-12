@@ -61,7 +61,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'mattn/emmet-vim'
 " scala
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'scalameta/nvim-metals'
+  Plug 'scalameta/nvim-metals', { 'tag': '0b9c5303b7402ae24971ed2f0e5890fd72505532' }
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-vsnip'
@@ -450,7 +450,7 @@ map("n", "gws", vim.lsp.buf.workspace_symbol)
 map("i", "<leader>cl", vim.lsp.codelens.run)
 map("i", "<m-p>", vim.lsp.buf.signature_help)
 map("n", "<leader>rn", vim.lsp.buf.rename)
-map("n", "<leader>f", vim.lsp.buf.formatting)
+-- map("n", "<leader>f", vim.lsp.buf.formatting)
 map("i", "<leader>ca", vim.lsp.buf.code_action)
 
 map("n", "<leader>ws", function()
@@ -557,10 +557,11 @@ local metals_config = require("metals").bare_config()
 
 -- Example of settings
 metals_config.settings = {
-  serverVersion = "0.11.11",
+  javaHome = "/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home",
+  serverVersion = "0.11.9",
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-  fallbackScalaVersion = "3.2.2",
+  fallbackScalaVersion = "3.1.0",
 }
 
 -- *READ THIS*
