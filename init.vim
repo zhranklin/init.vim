@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Yggdroot/indentLine' "indentLine导致卡顿，原因未知
   Plug 'ryanoasis/vim-devicons'
   Plug 'myusuf3/numbers.vim'
+  Plug 'nvim-telescope/telescope.nvim'
 """""""""""""""""""""""""""""""""
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -556,9 +557,10 @@ local metals_config = require("metals").bare_config()
 
 -- Example of settings
 metals_config.settings = {
+  serverVersion = "0.11.11",
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-  fallbackScalaVersion = "3.1.3",
+  fallbackScalaVersion = "3.2.2",
 }
 
 -- *READ THIS*
