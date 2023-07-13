@@ -110,27 +110,30 @@ wk.register {
 wk.register {
   name='git',
   [']c'] = {function() if vim.wo.diff then return ']c' end
-              vim.schedule(function() gs.next_hunk() end)
+              vim.schedule(function() package.loaded.gitsigns.next_hunk() end)
               return '<Ignore>'
             end, 'Next Git Diff', expr=true},
   ['[c'] = {function() if vim.wo.diff then return '[c' end
-              vim.schedule(function() gs.prev_hunk() end)
+              vim.schedule(function() package.loaded.gitsigns.prev_hunk() end)
               return '<Ignore>'
             end, 'Previous Git Diff', expr=true},
   ['<leader>'] = {
-    hs = {function() package.loaded.gitsigns.stage_hunk() end, 'Stage Current Diff'},
-    hr = {function() package.loaded.gitsigns.reset_hunk() end, 'Revert Current Diff'},
-    hs = {function() package.loaded.gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, 'Stage', mode='v'},
-    hr = {function() package.loaded.gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, 'Reset', mode='v'},
-    hS = {function() package.loaded.gitsigns.stage_buffer() end, 'Stage File'},
-    hu = {function() package.loaded.gitsigns.undo_stage_hunk() end, 'Undo Stage'},
-    hR = {function() package.loaded.gitsigns.reset_buffer() end, 'Revert File'},
-    hp = {function() package.loaded.gitsigns.preview_hunk() end, 'Preview Diff'},
-    hb = {function() package.loaded.gitsigns.blame_line{full=true} end, ''},
+    gs = {function() package.loaded.gitsigns.stage_hunk() end, 'Stage Current Diff'},
+    gr = {function() package.loaded.gitsigns.reset_hunk() end, 'Revert Current Diff'},
+    gS = {function() package.loaded.gitsigns.stage_buffer() end, 'Stage File'},
+    gu = {function() package.loaded.gitsigns.undo_stage_hunk() end, 'Undo Stage'},
+    gR = {function() package.loaded.gitsigns.reset_buffer() end, 'Revert File'},
+    gp = {function() package.loaded.gitsigns.preview_hunk() end, 'Preview Diff'},
+    gb = {function() package.loaded.gitsigns.blame_line{full=true} end, ''},
+    gd = {function() package.loaded.gitsigns.diffthis() end, 'Show Current File Diff'},
+    gD = {function() package.loaded.gitsigns.diffthis('~') end, 'Show Current File Diff(~?)'},
     tb = {function() package.loaded.gitsigns.toggle_current_line_blame() end, ''},
-    hd = {function() package.loaded.gitsigns.diffthis() end, 'Show Current File Diff'},
-    hD = {function() package.loaded.gitsigns.diffthis('~') end, 'Show Current File Diff(~?)'},
     td = {function() package.loaded.gitsigns.toggle_deleted() end, '(Toggle)Show Deleted Lines'},
+  },
+  ['<leader>h'] = {
+    mode='v',
+    s = {function() package.loaded.gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, 'Stage', mode='v'},
+    r = {function() package.loaded.gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, 'Reset', mode='v'},
   },
   ig = {'{:<C-U>Gitsigns select_hunk<CR>', 'Current Git Diff', mode={'o', 'x'}},
 }

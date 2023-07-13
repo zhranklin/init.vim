@@ -37,13 +37,6 @@ local function setup(use)
       require("toggleterm").setup()
     end,
   }
-  -- 面包屑, 显示当前类结构
-  use {
-    'Bekaboo/dropbar.nvim',
-    config = function()
-      require('dropbar').setup()
-    end
-  }
   -- 显示代码结构(类、方法等)的插件, 目前无法在scala-cli下使用
   use {
     'stevearc/aerial.nvim',

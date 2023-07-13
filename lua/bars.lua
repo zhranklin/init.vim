@@ -11,6 +11,13 @@ local function setup(use)
       }
     end
   }
+  -- 面包屑, 显示当前类结构
+  use {
+    'Bekaboo/dropbar.nvim',
+    config = function()
+      require('dropbar').setup()
+    end
+  }
 
   -- 顶上的文件栏
   use {

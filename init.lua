@@ -15,6 +15,7 @@ require('packer').startup(function(use)
   require'plugins.nvim-ufo'.setup(use) --空格折叠
   require'plugins.hlslens'.setup(use) -- 优化'/'命令视图
   require'scala'.setup(use)
+  require'lsp-lua'.setup(use)
   require'bars'.setup(use) -- gb切换文件
   require'motions'.setup(use) --跳转增强
   use{ 'echasnovski/mini.nvim',
